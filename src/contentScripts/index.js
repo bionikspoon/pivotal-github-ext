@@ -4,7 +4,6 @@ import ReactDom from 'react-dom'
 import React from 'react'
 import { head, defaultTo, pipe, prop } from 'ramda'
 
-import './index.css'
 import App from './App'
 
 function insertAfter(newNode, refNode) {

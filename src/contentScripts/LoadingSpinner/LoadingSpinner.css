@@ -1,0 +1,15 @@
+.LoadingSpinner__container {
+  margin-left: -60px;
+
+  & > svg {
+    animation: rotator 1.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  }
+}
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

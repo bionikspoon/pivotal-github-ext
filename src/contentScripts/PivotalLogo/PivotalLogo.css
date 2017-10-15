@@ -1,0 +1,11 @@
+.PivotalLogo__container {
+  background: #ed7d1a;
+  float: left;
+  width: 44px;
+  height: 44px;
+  padding: 6px;
+  margin-left: -60px;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+}

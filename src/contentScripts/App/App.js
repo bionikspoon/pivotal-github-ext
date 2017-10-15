@@ -1,15 +1,12 @@
 import React from 'react'
-import { map } from 'ramda'
 import PropTypes from 'prop-types'
-import PivotalStory from '../PivotalStory'
+import PivotalStories from '../PivotalStories'
+import './App.css'
 
 export default function App(props) {
   return (
-    <div className="App__container">
-      {map(
-        storyId => <PivotalStory storyId={storyId} key={storyId} />,
-        props.storyIds
-      )}
+    <div className="App__container clearfix">
+      <PivotalStories storyIds={props.storyIds} />
     </div>
   )
 }
