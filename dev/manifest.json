@@ -12,11 +12,18 @@
   "default_locale": "en",
   "permissions": ["https://github.com/*"],
   "content_security_policy":
-    "script-src 'self'; object-src 'self'; connect-src 'self' https://localhost:8080",
+    "script-src 'self' https://localhost:8080; object-src 'self'; connect-src 'self' https://localhost:8080 wss://localhost:8080 https://www.pivotaltracker.com",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["inject.js"]
+      "js": ["inject/index.js"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["inject/eventPage.js"],
+    "persistent": false
+  },
+  "externally_connectable": {
+    "matches": ["https://github.com/*"]
+  }
 }

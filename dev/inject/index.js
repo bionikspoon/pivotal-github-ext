@@ -10,9 +10,10 @@ chrome.extension.sendMessage({}, () => {
       $script.type = 'text/javascript'
       $script.src = 'https://localhost:8080/index.js'
       $head.appendChild($script)
+
       // ----------------------------------------------------------
-      // This part of the script triggers when page is done loading
-      console.log('Hello. This message was sent from src/inject.js')
+      // eslint-disable-next-line no-console
+      console.log('Script from dev/inject/index.js successfully loaded.')
       // ----------------------------------------------------------
     }
   }, 10)

@@ -19,8 +19,3 @@ insertAfter($div, $header)
 const prTitle = innerText(document.getElementsByClassName('js-issue-title'))
 
 ReactDom.render(<App title={prTitle} />, $div)
-
-// ----------------------------------------------------------
-// This part of the script triggers when page is done loading
-console.log('Hello. This message was sent from src/index.js')
-// ----------------------------------------------------------
