@@ -1,6 +1,7 @@
+/* @flow */
 import { nth } from 'ramda'
 
-function* matches(regex, text) {
+function* matches(regex: RegExp, text: string) {
   while (true) {
     const match = regex.exec(text)
     if (match === null) {
@@ -9,7 +10,7 @@ function* matches(regex, text) {
     yield match
   }
 }
-const matchGroup = (regex, index, text) =>
+const matchGroup = (regex: RegExp, index: number, text: string) =>
   [...matches(regex, text)].map(nth(index))
 
 export default matchGroup

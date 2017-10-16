@@ -1,3 +1,4 @@
+/* @flow */
 export const STATUS = {
   OK: 'OK',
   FAILED: 'FAILED',

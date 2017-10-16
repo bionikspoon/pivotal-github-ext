@@ -1,7 +1,10 @@
+/* @flow */
 /* eslint-env webextensions */
 import { STATUS, MESSAGE } from '../../shared/constants'
 
-const fetch = payload =>
+const { chrome } = global
+
+const fetch = (payload: any): Promise<*> =>
   new Promise((resolve, reject) => {
     const extensionId = 'mmiefdeeknidofnkidcjldcoklbmffdb'
 

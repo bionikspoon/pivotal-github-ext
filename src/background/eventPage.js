@@ -1,9 +1,10 @@
+/* @flow */
 /* eslint-env  webextensions */
 import { tap } from 'ramda'
 import { STATUS, MESSAGE } from '../shared/constants'
 import debug from './utils/debug'
 
-const { fetch } = global
+const { fetch, chrome } = global
 
 const successMessage = url =>
   tap(response =>

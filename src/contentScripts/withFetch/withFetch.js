@@ -1,3 +1,4 @@
+/* @flow */
 import { compose, mergeDeepRight, omit, tap, applySpec, pipe } from 'ramda'
 import { lifecycle, withStateHandlers, mapProps, withProps } from 'recompose'
 import { LOADING } from '../constants'
@@ -48,7 +49,9 @@ const renameData = ({
   [name]: { loading, [id]: resource },
 })
 
-export default getOptions =>
+type GetOptions = any => { name?: string, url: string, id: string, headers: {} }
+
+export default (getOptions: GetOptions) =>
   compose(
     withProps(
       applySpec({

@@ -1,3 +1,4 @@
+/* @flow */
 import { compose, applySpec } from 'ramda'
 import { mapProps } from 'recompose'
 import matchGroup from '../utils/matchGroup'

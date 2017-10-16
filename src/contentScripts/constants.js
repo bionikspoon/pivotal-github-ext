@@ -1,3 +1,4 @@
+/* @flow */
 export const LOADING = {
   UNSTARTED: 'UNSTARTED',
   STARTED: 'STARTED',

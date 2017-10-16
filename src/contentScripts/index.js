@@ -1,3 +1,4 @@
+/* @flow */
 /* eslint-env browser */
 
 import ReactDom from 'react-dom'
@@ -7,7 +8,9 @@ import { head, defaultTo, pipe, prop } from 'ramda'
 import App from './App'
 
 function insertAfter(newNode, refNode) {
-  return refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
+  if (refNode && refNode.parentNode) {
+    refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
+  }
 }
 const innerText = pipe(head, defaultTo({}), prop('innerText'))
 

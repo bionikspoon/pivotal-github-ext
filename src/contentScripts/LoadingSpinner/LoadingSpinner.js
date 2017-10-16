@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react'
 import PivotalLogo from '../PivotalLogo'
 import './LoadingSpinner.css'

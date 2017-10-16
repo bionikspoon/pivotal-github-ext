@@ -1,3 +1,4 @@
+/* @flow */
 import { compose } from 'ramda'
 import withFetch from '../withFetch'
 import { PIVOTAL_ACCESS_TOKEN } from '../constants'

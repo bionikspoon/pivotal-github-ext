@@ -1,13 +1,30 @@
+/* @flow */
 import React from 'react'
-import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
+import { replace } from 'ramda'
 import { LOADING } from '../constants'
 import PivotalLogo from '../PivotalLogo'
 import LoadingSpinner from '../LoadingSpinner'
 import Well from '../Well'
 import './PivotalStory.css'
+import StoryTypeIcon from './StoryTypeIcon'
 
-export default function PivotalStory(props) {
+const reUrl = /([^[(])(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}[-a-zA-Z0-9@:%_+.~#?&//=]*)([^\])])/g
+const formatLinks = replace(reUrl, '$1[$2]($2)$3')
+
+type Props = {
+  data: {
+    loading: string,
+    story?: {
+      id: string,
+      name: string,
+      description: string,
+      story_type: string,
+    },
+  },
+}
+
+export default function PivotalStory(props: Props) {
   if (props.data.loading === LOADING.STARTED) {
     return (
       <Well className="PivotalStory__container">
@@ -15,33 +32,26 @@ export default function PivotalStory(props) {
       </Well>
     )
   }
-  if (props.data.loading !== LOADING.SUCCESS) {
+  if (!props.data.story) {
     return null
   }
   return (
     <Well className="PivotalStory__container">
       <PivotalLogo className="PivotalStory__logo" />
       <div className="PivotalStory__body">
-        <h2 className="PivotalStory__name">
-          {props.data.story.name}{' '}
-          <span className="PivotalStory__id">{props.data.story.id}</span>
-        </h2>
+        <div className="PivotalStory__title">
+          <h2 className="PivotalStory__name">
+            {props.data.story.name}
+            <span className="PivotalStory__id">{props.data.story.id}</span>
+          </h2>
+          <StoryTypeIcon size={20} storyType={props.data.story.story_type} />
+        </div>
+
         <ReactMarkdown
           className="PivotalStory__description markdown-body"
-          source={props.data.story.description}
+          source={formatLinks(props.data.story.description)}
         />
       </div>
     </Well>
   )
-}
-
-PivotalStory.propTypes = {
-  data: PropTypes.shape({
-    loading: PropTypes.oneOf(Object.keys(LOADING)).isRequired,
-    story: PropTypes.shape({
-      id: PropTypes.node.isRequired,
-      name: PropTypes.node.isRequired,
-      description: PropTypes.node.isRequired,
-    }),
-  }).isRequired,
 }

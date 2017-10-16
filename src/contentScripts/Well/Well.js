@@ -1,9 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+/* @flow */
+import * as React from 'react'
 import cx from 'classnames'
 import './Well.css'
 
-export default function Well(props) {
+type Props = {
+  className?: string,
+  children: React.Node,
+}
+
+export default function Well(props: Props) {
   return (
     <div className={cx('Well__container', props.className)}>
       {props.children}
@@ -12,8 +17,4 @@ export default function Well(props) {
 }
 Well.defaultProps = {
   className: undefined,
-}
-Well.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
 }

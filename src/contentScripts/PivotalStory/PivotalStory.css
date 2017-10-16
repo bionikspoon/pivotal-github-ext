@@ -9,16 +9,26 @@
 .PivotalStory__body {
 }
 
-.PivotalStory__name {
-  height: 44px;
-  font-size: 14px;
-  line-height: 44px;
+.PivotalStory__title {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
   padding: 0 15px;
+  justify-content: space-between;
+
+  & > svg {
+    margin-left: 0.5em;
+  }
+}
+
+.PivotalStory__name {
+  font-size: 14px;
 }
 
 .PivotalStory__id {
   color: #a3aab1;
   font-weight: 400;
+  margin-left: 0.5em;
 
   &::before {
     content: '#';

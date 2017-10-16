@@ -1,10 +1,13 @@
+/* @flow */
 import React from 'react'
 import { map } from 'ramda'
-import PropTypes from 'prop-types'
 import PivotalStory from '../PivotalStory'
 import './PivotalStories.css'
 
-export default function PivotalStories(props) {
+type Props = {
+  storyIds: Array<string>,
+}
+export default function PivotalStories(props: Props) {
   return (
     <div className="PivotalStories__container">
       {map(
@@ -13,8 +16,4 @@ export default function PivotalStories(props) {
       )}
     </div>
   )
-}
-
-PivotalStories.propTypes = {
-  storyIds: PropTypes.arrayOf(PropTypes.node.isRequired).isRequired,
 }

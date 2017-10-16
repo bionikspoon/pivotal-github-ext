@@ -1,3 +1,4 @@
+/* @flow */
 import PivotalStory from './PivotalStory'
 import enhancer from './enhancers'
 
