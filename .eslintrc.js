@@ -3,7 +3,8 @@ module.exports = {
   plugins: ['prettier'],
   parser: 'babel-eslint',
   rules: {
-    'react/jsx-filename-extension': 'off',
+    'no-underscore-dangle': 'off',
     'prettier/prettier': 'error',
+    'react/jsx-filename-extension': 'off',
   },
 }

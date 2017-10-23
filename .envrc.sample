@@ -1,2 +1,1 @@
-export PIVOTAL_ACCESS_TOKEN=secret
 export DEBUG='ext:*'

@@ -1,26 +1,40 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
+const WriteFilePlugin = require('write-file-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
     index: './src/contentScripts/index.js',
-    eventPage: './src/background/eventPage.js',
+    inject: './src/contentScripts/inject.js',
+    background: './src/background/index.js',
+    options: './src/options/index.js',
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist', 'build']),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        PIVOTAL_ACCESS_TOKEN: JSON.stringify(process.env.PIVOTAL_ACCESS_TOKEN),
         DEBUG: JSON.stringify(process.env.DEBUG),
       },
     }),
+    new HtmlWebpackPlugin({
+      filename: 'background.html',
+      template: './src/background/index.html',
+      chunks: ['background'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'options.html',
+      template: './src/options/index.html',
+      chunks: ['options'],
+    }),
+    new WriteFilePlugin(),
   ],
   module: {
     rules: [
@@ -34,5 +48,10 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     https: true,
+    overlay: true,
+    hot: false,
+    port: process.env.PORT || 8080,
+    host: 'localhost',
+    headers: { 'Access-Control-Allow-Origin': '*' },
   },
 }

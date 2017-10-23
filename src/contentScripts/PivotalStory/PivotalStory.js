@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { replace } from 'ramda'
-import { LOADING } from '../constants'
+import { LOADING } from '../../shared/constants'
 import PivotalLogo from '../PivotalLogo'
 import LoadingSpinner from '../LoadingSpinner'
 import Well from '../Well'
@@ -14,8 +14,7 @@ const formatLinks = replace(reUrl, '$1[$2]($2)$3')
 
 type Props = {
   data: {
-    loading: string,
-    story?: {
+    story: {
       id: string,
       name: string,
       description: string,
@@ -25,16 +24,6 @@ type Props = {
 }
 
 export default function PivotalStory(props: Props) {
-  if (props.data.loading === LOADING.STARTED) {
-    return (
-      <Well className="PivotalStory__container">
-        <LoadingSpinner />
-      </Well>
-    )
-  }
-  if (!props.data.story) {
-    return null
-  }
   return (
     <Well className="PivotalStory__container">
       <PivotalLogo className="PivotalStory__logo" />

@@ -6,4 +6,12 @@ export const STATUS = {
 
 export const MESSAGE = {
   FETCH: 'FETCH',
+  STORAGE: 'STORAGE',
 }
+export const LOADING = {
+  UNSTARTED: 'UNSTARTED',
+  STARTED: 'STARTED',
+  SUCCESS: 'SUCCESS',
+  ERROR: 'ERROR',
+}
+export const EXTENSION_ID = 'blbhgbilodadkgjijpemanhhkfklkepn'

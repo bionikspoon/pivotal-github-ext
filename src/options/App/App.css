@@ -1,0 +1,28 @@
+.App__container {
+}
+
+.App__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.App__form__group {
+  justify-content: space-between;
+  display: flex;
+}
+
+.App__form__input {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.App__form__actions {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 10px;
+}
+
+.App__saved {
+  color: gray;
+}
