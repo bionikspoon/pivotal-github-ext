@@ -1,12 +1,13 @@
 {
   "scripts": {
-    "build": "webpack",
+    "build": "node scripts/build.js",
     "eslint": "eslint .",
     "flow": "flow",
     "prettier": "prettier '**/*.{js,json,css}' -l",
     "start": "node scripts/start.js"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "debug": "^3.1.0",
     "ramda": "^0.25.0",
@@ -48,7 +49,8 @@
   },
   "name": "pivotal-github-ext",
   "version": "0.0.0",
-  "description": "Chrome extension to add pivotal information to github pull requests.",
+  "description":
+    "Chrome extension to add pivotal information to github pull requests.",
   "repository": "git@github.com:bionikspoon/pivotal-github-ext.git",
   "author": "Manu Phatak <manu@thinkcerca.com>",
   "license": "MIT"

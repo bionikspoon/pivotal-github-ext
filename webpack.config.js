@@ -6,8 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: './src/contentScripts/index.js',
-    inject: './src/contentScripts/inject.js',
+    index: ['babel-polyfill', './src/contentScripts/index.js'],
     background: './src/background/index.js',
     options: './src/options/index.js',
   },
@@ -17,7 +16,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin(['dist', 'build']),
+    new CleanWebpackPlugin(['build']),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),

@@ -1,6 +1,6 @@
 const WebpackDevServer = require('webpack-dev-server')
 const webpack = require('webpack')
-const _config = require('../webpack.config.js')
+const _config = require('../webpack.config')
 const debug = require('debug')('ext:scripts:start')
 
 const {
@@ -34,7 +34,7 @@ const compiler = webpack(config)
 const server = new WebpackDevServer(compiler, options)
 
 server.listen(PORT, 'localhost', () => {
-  require('./write_manifest.js') // eslint-disable-line global-require
-  require('./copy_assets.js') // eslint-disable-line global-require
+  require('./write_manifest') // eslint-disable-line global-require
+  require('./copy_assets') // eslint-disable-line global-require
   debug(`dev server listening on port ${PORT}`)
 })
