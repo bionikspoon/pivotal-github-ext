@@ -1,4 +1,6 @@
 /* @flow */
+/* global SyntheticEvent, HTMLInputElement */
+
 import { branch, renderNothing, withHandlers, withState } from 'recompose'
 import { compose, pathEq, complement } from 'ramda'
 import { LOADING } from '../../shared/constants'

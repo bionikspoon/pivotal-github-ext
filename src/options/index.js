@@ -1,11 +1,8 @@
 /* @flow */
-/* eslint-env  webextensions */
-import debug from './utils/debug'
+/* eslint-env  browser */
 import React from 'react'
 import ReactDom from 'react-dom'
 import App from './App'
-
-const { chrome } = global
 
 const $div = document.getElementById('App')
 

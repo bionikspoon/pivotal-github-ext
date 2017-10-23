@@ -4,7 +4,16 @@ import LoadingSpinner from '../LoadingSpinner'
 import Well from '../Well'
 import './PivotalStory.css'
 
-export default function Invalid(props) {
+type Props = {
+  data: {
+    story: {
+      error: string,
+      possible_fix: string,
+    },
+  },
+}
+
+export default function Invalid(props: Props) {
   return (
     <Well className="PivotalStory__container">
       <LoadingSpinner />

@@ -1,6 +1,6 @@
 /* @flow */
 import { withStateHandlers, lifecycle, mapProps } from 'recompose'
-import { compose, omit, tap } from 'ramda'
+import { compose, omit } from 'ramda'
 import { LOADING } from '../constants'
 
 type Callback = any => Promise<{}>
@@ -29,7 +29,6 @@ export default (callback: Callback, options: Options = { name: 'data' }) =>
           .then(() => onInit())
           .then(() => callback(this.props))
           .then(onSuccess)
-          .then(() => console.log('this.props', this.props))
           .catch(onError)
       },
     }),

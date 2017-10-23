@@ -1,5 +1,5 @@
 /* @flow */
-import { compose, complement, pathEq, any, path } from 'ramda'
+import { compose, complement, pathEq, path } from 'ramda'
 import { branch, renderNothing, renderComponent } from 'recompose'
 import withFetch from '../withFetch'
 import withAsyncFactory from '../../shared/utils/withAsyncFactory'

@@ -4,7 +4,6 @@ import { tap } from 'ramda'
 import { STATUS, MESSAGE } from '../shared/constants'
 import debug from './utils/debug'
 import * as storage from '../shared/utils/storage'
-// import './utils/hotReload'
 
 const { fetch, chrome } = global
 
