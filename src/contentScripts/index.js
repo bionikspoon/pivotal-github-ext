@@ -4,7 +4,7 @@ import React from 'react'
 import { head, defaultTo, pipe, prop } from 'ramda'
 import debug from './utils/debug'
 
-import App from './App'
+import App from './components/App'
 
 const { chrome } = global
 

@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: ['babel-polyfill', './src/contentScripts/index.js'],
+    index: './src/contentScripts/index.js',
     background: './src/background/index.js',
     options: './src/options/index.js',
   },

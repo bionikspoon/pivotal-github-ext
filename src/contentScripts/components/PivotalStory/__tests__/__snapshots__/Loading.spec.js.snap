@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Loading it renders correctly 1`] = `
+<Well
+  className="PivotalStory__container"
+>
+  <LoadingSpinner />
+</Well>
+`;

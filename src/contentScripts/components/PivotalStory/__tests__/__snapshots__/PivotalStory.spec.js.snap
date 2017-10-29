@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/PivotalStory it renders correctly 1`] = `
+<Well
+  className="PivotalStory__container"
+>
+  <PivotalLogo
+    className="PivotalStory__logo"
+    fill="#ffffff"
+  />
+  <div
+    className="PivotalStory__body"
+  >
+    <div
+      className="PivotalStory__title"
+    >
+      <h2
+        className="PivotalStory__name"
+      >
+        Create user profile page
+        <span
+          className="PivotalStory__id"
+        >
+          1234
+        </span>
+      </h2>
+      <StoryTypeIcon
+        fill="#5282b0"
+        size={20}
+        storyType="features"
+      />
+    </div>
+    <ReactMarkdown
+      className="PivotalStory__description markdown-body"
+      containerTagName="div"
+      parserOptions={Object {}}
+      source="**expected**:
+- user can see user profile page"
+    />
+  </div>
+</Well>
+`;

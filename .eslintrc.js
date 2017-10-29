@@ -8,7 +8,20 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['scripts/**/*.js', 'webpack.config.js'] },
+      {
+        devDependencies: [
+          'scripts/**/*.js',
+          'webpack.config.js',
+          '**/*.spec.js',
+          'src/testSetup.js',
+        ],
+      },
     ],
   },
+  overrides: [
+    {
+      files: '**/*.spec.js',
+      env: { jest: true },
+    },
+  ],
 }

@@ -1,13 +1,28 @@
 {
+  "name": "pivotal-github-ext",
+  "version": "0.0.0",
+  "description":
+    "Chrome extension to add pivotal information to github pull requests.",
+  "repository": "git@github.com:bionikspoon/pivotal-github-ext.git",
+  "author": "Manu Phatak <manu@thinkcerca.com>",
+  "license": "MIT",
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "setupFiles": ["<rootDir>/src/testShim.js", "<rootDir>/src/testSetup.js"]
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "eslint": "eslint .",
     "flow": "flow",
     "prettier": "prettier '**/*.{js,json,css}' -l",
-    "start": "node scripts/start.js"
+    "start": "node scripts/start.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "debug": "^3.1.0",
     "ramda": "^0.25.0",
@@ -26,6 +41,9 @@
     "caniuse-lite": "^1.0",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-prettier": "^2.6.0",
@@ -36,6 +54,7 @@
     "flow-bin": "^0.57.2",
     "fs-extra": "^4.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
     "postcss": "^6.0.13",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.0.2",
@@ -46,12 +65,5 @@
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1",
     "write-file-webpack-plugin": "^4.2.0"
-  },
-  "name": "pivotal-github-ext",
-  "version": "0.0.0",
-  "description":
-    "Chrome extension to add pivotal information to github pull requests.",
-  "repository": "git@github.com:bionikspoon/pivotal-github-ext.git",
-  "author": "Manu Phatak <manu@thinkcerca.com>",
-  "license": "MIT"
+  }
 }

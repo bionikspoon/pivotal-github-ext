@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Invalid it renders correctly 1`] = `
+<Well
+  className="PivotalStory__container"
+>
+  <LoadingSpinner />
+  <div
+    className="PivotalStory__body"
+  >
+    <div
+      className="PivotalStory__title"
+    >
+      <h2
+        className="PivotalStory__name"
+      >
+        Bad auth
+      </h2>
+    </div>
+    <p
+      className="PivotalStory__description"
+    >
+      make sure you follow directions
+    </p>
+  </div>
+</Well>
+`;

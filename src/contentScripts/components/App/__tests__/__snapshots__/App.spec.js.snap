@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/App it renders correctly 1`] = `
+<div
+  className="App__container clearfix"
+>
+  <PivotalStories
+    storyIds={
+      Array [
+        "1234",
+        "5678",
+      ]
+    }
+  />
+</div>
+`;

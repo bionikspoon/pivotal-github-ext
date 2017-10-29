@@ -1,10 +1,10 @@
 /* @flow */
 import { compose, complement, pathEq, path } from 'ramda'
 import { branch, renderNothing, renderComponent } from 'recompose'
-import withFetch from '../withFetch'
-import withAsyncFactory from '../../shared/utils/withAsyncFactory'
-import { storage } from '../utils/messages'
-import { LOADING } from '../../shared/constants'
+import withFetch from '../../hocs/withFetch'
+import withAsyncFactory from '../../../shared/utils/withAsyncFactory'
+import { storage } from '../../utils/messages'
+import { LOADING } from '../../../shared/constants'
 import Loading from './Loading'
 import Invalid from './Invalid'
 

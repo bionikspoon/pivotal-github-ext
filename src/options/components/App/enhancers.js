@@ -3,9 +3,9 @@
 
 import { branch, renderNothing, withHandlers, withState } from 'recompose'
 import { compose, pathEq, complement } from 'ramda'
-import { LOADING } from '../../shared/constants'
-import withAsyncFactory from '../../shared/utils/withAsyncFactory'
-import * as storage from '../../shared/utils/storage'
+import { LOADING } from '../../../shared/constants'
+import withAsyncFactory from '../../../shared/utils/withAsyncFactory'
+import * as storage from '../../../shared/utils/storage'
 
 const onSubmit = ({ form, setForm }) => (
   event: SyntheticEvent<HTMLInputElement>

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/StoryTypeIcon it renders correctly for bugs 1`] = `
+<svg
+  className="StoryTypeIcon__container"
+  fill="#111111"
+  height={200}
+  viewBox="0 0 24 24"
+  width={200}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <BugIcon />
+</svg>
+`;
+
+exports[`components/StoryTypeIcon it renders correctly for features 1`] = `
+<svg
+  className="StoryTypeIcon__container"
+  fill="#111111"
+  height={200}
+  viewBox="0 0 24 24"
+  width={200}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <FeatureIcon />
+</svg>
+`;
