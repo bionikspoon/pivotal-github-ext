@@ -1,5 +1,5 @@
 /* @flow */
-import { STATUS, MESSAGE, EXTENSION_ID } from '../../shared/constants'
+import { STATUS, MESSAGE } from '../../shared/constants'
 
 const { chrome } = global
 
@@ -11,7 +11,7 @@ const messageCreator = messageType => (payload: any): Promise<*> =>
         ? resolve(response.payload)
         : reject(response.payload)
 
-    chrome.runtime.sendMessage(EXTENSION_ID, message, responseCallback)
+    chrome.runtime.sendMessage(message, responseCallback)
   })
 
 export const fetch = messageCreator(MESSAGE.FETCH)

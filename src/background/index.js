@@ -12,7 +12,8 @@ const logFetchSuccess = url =>
     debug('Successfully fetched url: %s response: %O', url, response)
   )
 debug('background loaded')
-chrome.runtime.onMessageExternal.addListener(
+
+chrome.runtime.onMessage.addListener(
   ({ type, payload }, sender, sendResponse) => {
     debug('received message type: %s url: %s options: %O', type)
     switch (type) {
@@ -22,6 +23,7 @@ chrome.runtime.onMessageExternal.addListener(
           .then(response => response.json())
           .then(logFetchSuccess(payload.url))
           .then(json => sendResponse({ status: STATUS.OK, payload: json }))
+          .catch(json => sendResponse({ status: STATUS.FAILED, payload: json }))
         break
       case MESSAGE.STORAGE:
         debug('storage.get keys: %O', payload)
