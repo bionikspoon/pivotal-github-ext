@@ -1,6 +1,6 @@
 {
   "name": "pivotal-github-ext",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description":
     "Chrome extension to add pivotal information to github pull requests.",
   "repository": "git@github.com:bionikspoon/pivotal-github-ext.git",
