@@ -1,3 +1,4 @@
+/* @flow */
 /* eslint-env browser */
 import ReactDom from 'react-dom'
 import React from 'react'
@@ -5,8 +6,6 @@ import { head, defaultTo, pipe, prop } from 'ramda'
 import debug from './utils/debug'
 
 import App from './components/App'
-
-const { chrome } = global
 
 const insertAfter = (newNode, refNode) => {
   if (refNode && refNode.parentNode) {
@@ -25,7 +24,7 @@ const mount = () => {
   ReactDom.render(<App title={prTitle} />, $div)
 }
 
-chrome.extension.sendMessage({}, () => {
+const init = () => {
   const readyStateCheckInterval = setInterval(() => {
     if (document.readyState === 'complete') {
       clearInterval(readyStateCheckInterval)
@@ -33,8 +32,35 @@ chrome.extension.sendMessage({}, () => {
       mount()
 
       // ----------------------------------------------------------
-      debug('Script from index.js successfully loaded.')
+      debug('`index.js` loaded successfully')
       // ----------------------------------------------------------
     }
   }, 10)
-})
+
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach((mutation: MutationRecord) => {
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach(node => {
+          if (
+            node instanceof HTMLElement &&
+            node.classList.contains('new-discussion-timeline')
+          ) {
+            mount()
+          }
+        })
+      }
+    })
+  })
+
+  const target = document.getElementById('js-repo-pjax-container')
+  const config = {
+    childList: true,
+    subtree: false,
+  }
+
+  if (target) {
+    observer.observe(target, config)
+  }
+}
+
+init()

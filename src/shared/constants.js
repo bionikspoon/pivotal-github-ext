@@ -14,4 +14,3 @@ export const LOADING = {
   SUCCESS: 'SUCCESS',
   ERROR: 'ERROR',
 }
-export const EXTENSION_ID = 'blbhgbilodadkgjijpemanhhkfklkepn'
