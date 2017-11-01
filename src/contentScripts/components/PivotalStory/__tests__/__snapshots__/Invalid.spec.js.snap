@@ -17,11 +17,16 @@ exports[`components/Invalid it renders correctly 1`] = `
         Bad auth
       </h2>
     </div>
-    <p
+    <div
       className="PivotalStory__description"
     >
-      make sure you follow directions
-    </p>
+      <p>
+        <b />
+      </p>
+      <p>
+        make sure you follow directions
+      </p>
+    </div>
   </div>
 </Well>
 `;
