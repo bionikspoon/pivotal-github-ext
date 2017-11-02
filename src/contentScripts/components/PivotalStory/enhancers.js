@@ -46,7 +46,7 @@ export default compose(
       storyId: path(['data', 'story', 'id']),
       storyName: path(['data', 'story', 'name']),
       storyDescription: pipe(
-        pathOr('', ['data', 'story', 'desciption']),
+        pathOr('', ['data', 'story', 'description']),
         formatLinks
       ),
     })
