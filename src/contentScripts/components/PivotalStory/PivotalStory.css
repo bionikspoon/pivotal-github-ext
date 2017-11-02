@@ -9,6 +9,10 @@
 .PivotalStory__body {
 }
 
+.PivotalStory__link {
+  color: inherit;
+}
+
 .PivotalStory__title {
   display: flex;
   min-height: 44px;

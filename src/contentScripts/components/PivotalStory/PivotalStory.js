@@ -20,7 +20,12 @@ export default function PivotalStory(props: Props) {
       <div className="PivotalStory__body">
         <div className="PivotalStory__title">
           <h2 className="PivotalStory__name">
-            {props.storyName}
+            <a
+              className="PivotalStory__link"
+              href={`https://www.pivotaltracker.com/story/show/${props.storyId}`}
+            >
+              {props.storyName}
+            </a>
             <span className="PivotalStory__id">{props.storyId}</span>
           </h2>
           <StoryTypeIcon size={20} storyType={props.storyType} />
