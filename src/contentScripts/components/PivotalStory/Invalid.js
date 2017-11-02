@@ -9,6 +9,7 @@ type Props = {
     story: {
       error: string,
       possible_fix: string,
+      general_problem: string,
     },
   },
 }
@@ -21,10 +22,12 @@ export default function Invalid(props: Props) {
         <div className="PivotalStory__title">
           <h2 className="PivotalStory__name">{props.data.story.error}</h2>
         </div>
-
-        <p className="PivotalStory__description">
-          {props.data.story.possible_fix}
-        </p>
+        <div className="PivotalStory__description">
+          <p>
+            <b>{props.data.story.general_problem}</b>
+          </p>
+          <p>{props.data.story.possible_fix}</p>
+        </div>
       </div>
     </Well>
   )

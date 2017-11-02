@@ -1,8 +1,14 @@
+const { evolve, concat } = require('ramda')
 const webpack = require('webpack')
-const config = require('../webpack.config')
 const debug = require('debug')('ext:scripts:build')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const config = require('../webpack.config')
 
-webpack(config, error => {
+const prepareConfig = evolve({
+  plugins: concat([new UglifyJSPlugin()]),
+})
+
+webpack(prepareConfig(config), error => {
   if (error) {
     throw error
   }

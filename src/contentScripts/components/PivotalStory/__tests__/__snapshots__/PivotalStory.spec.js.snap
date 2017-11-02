@@ -17,7 +17,12 @@ exports[`components/PivotalStory it renders correctly 1`] = `
       <h2
         className="PivotalStory__name"
       >
-        Create user profile page
+        <a
+          className="PivotalStory__link"
+          href="https://www.pivotaltracker.com/story/show/1234"
+        >
+          Create user profile page
+        </a>
         <span
           className="PivotalStory__id"
         >

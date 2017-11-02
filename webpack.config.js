@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const WriteFilePlugin = require('write-file-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const env = require('./env')
 
 module.exports = {
   entry: {
@@ -12,15 +13,16 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
+    chunkFilename: '[name].js',
     path: path.resolve(__dirname, 'build'),
   },
-  devtool: 'inline-source-map',
+
   plugins: [
     new CleanWebpackPlugin(['build']),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        DEBUG: JSON.stringify(process.env.DEBUG),
+        NODE_ENV: JSON.stringify(env.NODE_ENV),
+        DEBUG: JSON.stringify(env.DEBUG),
       },
     }),
     new HtmlWebpackPlugin({
@@ -49,7 +51,7 @@ module.exports = {
     https: true,
     overlay: true,
     hot: false,
-    port: process.env.PORT || 8080,
+    port: env.PORT,
     host: 'localhost',
     headers: { 'Access-Control-Allow-Origin': '*' },
   },
