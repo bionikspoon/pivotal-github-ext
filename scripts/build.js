@@ -1,12 +1,9 @@
-const { evolve, concat } = require('ramda')
+const { merge } = require('ramda')
 const webpack = require('webpack')
 const debug = require('debug')('ext:scripts:build')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const config = require('../webpack.config')
 
-const prepareConfig = evolve({
-  plugins: concat([new UglifyJSPlugin()]),
-})
+const prepareConfig = merge({ mode: 'production' })
 
 webpack(prepareConfig(config), error => {
   if (error) {

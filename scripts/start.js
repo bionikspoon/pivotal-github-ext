@@ -21,7 +21,7 @@ const HOT_SERVER = [
   'webpack/hot/dev-server',
 ]
 const prepareConfig = pipe(
-  merge({ devtool: 'inline-source-map' }),
+  merge({ devtool: 'inline-source-map', mode: 'development' }),
   evolve({
     entry: map(
       unless(test(/contentScripts/), pipe(append(__, HOT_SERVER), flatten))

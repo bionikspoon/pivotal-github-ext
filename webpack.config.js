@@ -21,7 +21,6 @@ module.exports = {
     new CleanWebpackPlugin(['build']),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(env.NODE_ENV),
         DEBUG: JSON.stringify(env.DEBUG),
       },
     }),
