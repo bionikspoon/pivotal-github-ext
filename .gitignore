@@ -1,3 +1,5 @@
 node_modules
 .envrc
 build
+localhost.key
+localhost.crt

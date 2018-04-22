@@ -1,10 +1,9 @@
 /* @flow */
 import { applySpec, compose, mergeDeepRight, omit, pipe } from 'ramda'
 import { mapProps, withProps } from 'recompose'
-import fetchResources from '../../utils/fetchResources'
 import withAsyncFactory from '../../../shared/utils/withAsyncFactory'
 
-const fetchData = ({ options: { resources, headers } }) => {
+const fetchData = ({ options: { resources, headers, fetchResources } }) => {
   const options = {
     method: 'GET',
     headers,

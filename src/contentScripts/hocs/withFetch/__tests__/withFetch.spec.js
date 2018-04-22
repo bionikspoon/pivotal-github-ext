@@ -5,6 +5,7 @@ describe('hocs/withFetch', () => {
     test('it adds default props', () => {
       const props = {
         storyId: '7',
+        fetchResources: jest.fn(),
       }
 
       const optionsFromProps = ({ storyId }) => ({

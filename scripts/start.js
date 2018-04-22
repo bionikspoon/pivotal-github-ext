@@ -16,12 +16,17 @@ const {
   merge,
 } = require('ramda')
 
+const fs = require('fs-extra')
+
 const HOT_SERVER = [
   `webpack-dev-server/client?https://localhost:${env.PORT}`,
   'webpack/hot/dev-server',
 ]
 const prepareConfig = pipe(
-  merge({ devtool: 'inline-source-map', mode: 'development' }),
+  merge({
+    devtool: 'inline-source-map',
+    mode: 'development',
+  }),
   evolve({
     entry: map(
       unless(test(/contentScripts/), pipe(append(__, HOT_SERVER), flatten))

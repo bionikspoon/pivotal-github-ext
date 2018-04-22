@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const WriteFilePlugin = require('write-file-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const fs = require('fs-extra')
 const env = require('./env')
 
 module.exports = {
@@ -47,7 +48,10 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    https: true,
+    https: {
+      key: fs.readFileSync('localhost.key'),
+      cert: fs.readFileSync('localhost.crt'),
+    },
     overlay: true,
     hot: false,
     port: env.PORT,

@@ -1,21 +1,17 @@
 {
   "name": "pivotal-github-ext",
   "version": "0.0.2",
-  "description": "Chrome extension to add pivotal information to github pull requests.",
+  "description":
+    "Chrome extension to add pivotal information to github pull requests.",
   "repository": "git@github.com:bionikspoon/pivotal-github-ext.git",
   "author": "Manu Phatak <manu@thinkcerca.com>",
   "license": "MIT",
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/src/__mocks__/styleMock.js"
     },
-    "setupFiles": [
-      "<rootDir>/src/testShim.js",
-      "<rootDir>/src/testSetup.js"
-    ]
+    "setupFiles": ["<rootDir>/src/testShim.js", "<rootDir>/src/testSetup.js"]
   },
   "scripts": {
     "build": "node scripts/build.js",
@@ -24,7 +20,9 @@
     "prettier": "prettier '**/*.{js,json,css}' -l",
     "start": "node scripts/start.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -36,12 +34,14 @@
     "recompose": "^0.26.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-runtime": "^6.26.0",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.0",

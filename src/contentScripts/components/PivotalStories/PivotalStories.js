@@ -7,13 +7,19 @@ import './PivotalStories.css'
 type Props = {
   storyIds: Array<string>,
 }
+
 export default function PivotalStories(props: Props) {
+  const renderStories = map(storyId => (
+    <PivotalStory
+      storyId={storyId}
+      key={storyId}
+      storage={props.storage}
+      fetchResources={props.fetchResources}
+    />
+  ))
   return (
     <div className="PivotalStories__container">
-      {map(
-        storyId => <PivotalStory storyId={storyId} key={storyId} />,
-        props.storyIds
-      )}
+      {renderStories(props.storyIds)}
     </div>
   )
 }

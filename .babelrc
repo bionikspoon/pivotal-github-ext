@@ -1,4 +1,11 @@
 {
-  "presets": ["env", "react"],
-  "plugins": ["transform-object-rest-spread"]
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 Chrome versions"]
+      }
+    }],
+    "stage-3",
+    "react"
+  ],
 }

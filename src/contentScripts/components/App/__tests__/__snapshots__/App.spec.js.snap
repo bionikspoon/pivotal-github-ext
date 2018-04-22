@@ -5,6 +5,8 @@ exports[`components/App it renders correctly 1`] = `
   className="App__container clearfix"
 >
   <PivotalStories
+    fetchResources={[Function]}
+    storage={[Function]}
     storyIds={
       Array [
         "1234",
