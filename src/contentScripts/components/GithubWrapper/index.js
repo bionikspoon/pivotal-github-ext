@@ -1,3 +1,4 @@
+/* @flow */
 import GithubWrapper from './GithubWrapper'
 import enhancer from './enhancers'
 

@@ -6,6 +6,8 @@ import './PivotalStories.css'
 
 type Props = {
   storyIds: Array<string>,
+  storage: ({}) => Promise<{}>,
+  fetchResources: ({ options?: {}, resources: {} }) => Promise<{}>,
 }
 
 export default function PivotalStories(props: Props) {

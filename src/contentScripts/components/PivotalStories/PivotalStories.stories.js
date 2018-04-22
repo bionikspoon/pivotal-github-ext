@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
@@ -14,13 +15,11 @@ storiesOf('PivotalStories', module)
     />
   ))
 
-async function storage(...args) {
-  console.log('storage ...args', ...args)
+async function storage() {
   return { pivotalApiKey: '123' }
 }
 
-async function fetchResources(...args) {
-  console.log('fetchResources ...args', ...args)
+async function fetchResources() {
   return {
     story: {
       kind: 'story',

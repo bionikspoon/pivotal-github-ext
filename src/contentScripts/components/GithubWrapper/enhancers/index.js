@@ -1,3 +1,4 @@
+/* @flow */
 import { compose } from 'ramda'
 import withStylesheet from './withStylesheet'
 import withBodyClass from './withBodyClass'
