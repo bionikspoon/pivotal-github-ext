@@ -1,9 +1,8 @@
 /* @flow */
 /* eslint-disable jsx-a11y/label-has-for */
 import * as React from 'react'
-import { AppContainer } from '../App'
 
-type Props = { children: React.Node }
+type Props = { children: React.Node, title: string } // eslint-disable-line  react/no-unused-prop-types
 
 function GithubOuterWrapper(props: Props) {
   return (
@@ -21,7 +20,7 @@ function GithubOuterWrapper(props: Props) {
   )
 }
 
-function GithubConversation() {
+function GithubConversation(props: Props) {
   return (
     <React.Fragment>
       <h2 className="sr-only">Conversation</h2>
@@ -315,13 +314,11 @@ function GithubConversation() {
                       <div className="commit-message pr-1">
                         <code>
                           <a
-                            title="Makin' Changes [#151356728, #151371609, #151371639]"
+                            title={props.title}
                             className="message"
                             href="/bionikspoon/test_repo/pull/11/commits/5c2bb80087d5695294afb0c4ad3a40074ba085ca"
                           >
-                            {
-                              "Makin' Changes [#151356728, #151371609, #151371639]"
-                            }
+                            {props.title}
                           </a>
                         </code>
                       </div>
@@ -813,9 +810,7 @@ export default function GithubWrapper(props: Props) {
           </div>
 
           <h1 className="gh-header-title">
-            <span className="js-issue-title">
-              {"Makin' Changes [#151356728, #151371609, #151371639]"}
-            </span>
+            <span className="js-issue-title">{props.title}</span>
             <span className="gh-header-number">#11</span>
           </h1>
         </div>
@@ -903,9 +898,7 @@ export default function GithubWrapper(props: Props) {
           </div>
         </div>
       </div>
-      <div id="PivotalGithubChromeExtension">
-        <AppContainer>{props.children}</AppContainer>
-      </div>
+      <div id="PivotalGithubChromeExtension">{props.children}</div>
       <div className="tabnav tabnav-pr">
         <div className="tabnav-extra float-right">
           <span className="diffstat" id="diffstat">

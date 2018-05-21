@@ -15,7 +15,7 @@ module.exports = {
           'scripts/**/*.js',
           'webpack.config.js',
           '**/*.spec.js',
-          'src/testSetup.js',
+          'src/test/*.js',
         ],
       },
     ],

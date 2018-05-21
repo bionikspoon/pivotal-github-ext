@@ -4,11 +4,11 @@ exports[`components/PivotalStories it renders correctly 1`] = `
 <div
   className="PivotalStories__container"
 >
-  <withStateHandlers(lifecycle(mapProps(mapProps(branch(withProps(withStateHandlers(lifecycle(mapProps(mapProps(mapProps(branch(branch(branch(mapProps(PivotalStory)))))))))))))))
+  <withContext(branch(branch(branch(mapProps(PivotalStory)))))
     key="1234"
     storyId="1234"
   />
-  <withStateHandlers(lifecycle(mapProps(mapProps(branch(withProps(withStateHandlers(lifecycle(mapProps(mapProps(mapProps(branch(branch(branch(mapProps(PivotalStory)))))))))))))))
+  <withContext(branch(branch(branch(mapProps(PivotalStory)))))
     key="5678"
     storyId="5678"
   />

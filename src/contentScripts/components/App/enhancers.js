@@ -1,6 +1,6 @@
 /* @flow */
 import { applySpec } from 'ramda'
-import { mapProps } from 'recompose'
+import { withProps } from 'recompose'
 import matchGroup from '../../utils/matchGroup'
 
 type Props = {
@@ -13,4 +13,4 @@ export const storyIds = (props: Props): Array<string> => {
   return matchGroup(reStoryIds, 1, props.title)
 }
 
-export default mapProps(applySpec({ storyIds }))
+export default withProps(applySpec({ storyIds }))

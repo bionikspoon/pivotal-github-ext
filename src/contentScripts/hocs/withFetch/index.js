@@ -1,2 +1,2 @@
-/* @flow */
-export { default } from './withFetch'
+// /* @flow */
+// export { default } from './withFetch'

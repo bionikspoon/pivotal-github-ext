@@ -4,31 +4,27 @@ import ReactMarkdown from 'react-markdown'
 import PivotalLogo from '../PivotalLogo'
 import Well from '../Well'
 import './PivotalStory.css'
-import StoryTypeIcon from './StoryTypeIcon'
 
 type Props = {
   storyId: string,
   storyName: string,
   storyDescription: string,
-  storyType: string,
 }
 
 export default function PivotalStory(props: Props) {
+  const storyHref = `https://www.pivotaltracker.com/story/show/${props.storyId}`
+
   return (
     <Well className="PivotalStory__container">
       <PivotalLogo className="PivotalStory__logo" />
       <div className="PivotalStory__body">
         <div className="PivotalStory__title">
           <h2 className="PivotalStory__name">
-            <a
-              className="PivotalStory__link"
-              href={`https://www.pivotaltracker.com/story/show/${props.storyId}`}
-            >
+            <a className="PivotalStory__link" href={storyHref}>
               {props.storyName}
             </a>
             <span className="PivotalStory__id">{props.storyId}</span>
           </h2>
-          <StoryTypeIcon size={20} storyType={props.storyType} />
         </div>
 
         {props.storyDescription.length ? (

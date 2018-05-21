@@ -5,8 +5,7 @@ export const STATUS = {
 }
 
 export const MESSAGE = {
-  FETCH: 'FETCH',
-  STORAGE: 'STORAGE',
+  FETCH_STORY: 'FETCH_STORY',
 }
 export const LOADING = {
   UNSTARTED: 'UNSTARTED',

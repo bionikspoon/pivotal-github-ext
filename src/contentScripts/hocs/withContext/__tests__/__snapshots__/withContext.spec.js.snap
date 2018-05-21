@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hocs/withContext it matches snapshot 1`] = `
+<withContext(Div)>
+  <Div
+    store={
+      Object {
+        "getState": [Function],
+      }
+    }
+  >
+    <div
+      store={
+        Object {
+          "getState": [Function],
+        }
+      }
+    />
+  </Div>
+</withContext(Div)>
+`;

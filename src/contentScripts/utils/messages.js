@@ -1,18 +1,22 @@
 /* @flow */
 import { STATUS, MESSAGE } from '../../shared/constants'
 
-const { chrome } = global
+const asyncMessage = async ({ chrome, message }) => {
+  const { status, payload } = await new Promise(resolve =>
+    chrome.runtime.sendMessage(message, resolve)
+  )
 
-const messageCreator = messageType => (payload: any): Promise<*> =>
-  new Promise((resolve, reject) => {
-    const message = { type: messageType, payload }
-    const responseCallback = response =>
-      response.status === STATUS.OK
-        ? resolve(response.payload)
-        : reject(response.payload)
+  if (status !== STATUS.OK) {
+    throw payload
+  }
 
-    chrome.runtime.sendMessage(message, responseCallback)
-  })
+  return payload
+}
 
-export const fetch = messageCreator(MESSAGE.FETCH)
-export const storage = messageCreator(MESSAGE.STORAGE)
+const messageCreator = messageType => async ({ chrome, payload }) => {
+  const message = { type: messageType, payload }
+
+  return asyncMessage({ chrome, message })
+}
+
+export const fetchStory = messageCreator(MESSAGE.FETCH_STORY) // eslint-disable-line import/prefer-default-export

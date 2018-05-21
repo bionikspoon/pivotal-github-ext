@@ -1,22 +1,23 @@
 /* @flow */
 import React from 'react'
 import PivotalStories from '../PivotalStories'
-import AppContainer from './AppContainer'
-import { storage } from '../../utils/messages'
-import fetchResources from '../../utils/fetchResources'
+import AppProvider from './AppProvider'
 
 type Props = {
   storyIds: Array<string>,
+  chrome?: Object,
 }
 
 export default function App(props: Props) {
   return (
-    <AppContainer>
-      <PivotalStories
-        storyIds={props.storyIds}
-        storage={storage}
-        fetchResources={fetchResources}
-      />
-    </AppContainer>
+    <AppProvider chrome={props.chrome}>
+      <div className="App__container clearfix">
+        <PivotalStories storyIds={props.storyIds} />
+      </div>
+    </AppProvider>
   )
+}
+
+App.defaultProps = {
+  chrome: global.chrome,
 }

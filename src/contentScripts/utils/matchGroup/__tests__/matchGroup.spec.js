@@ -1,4 +1,4 @@
-import matchGroup from '../matchGroup'
+import matchGroup from '..'
 
 describe('utils/matchGroup', () => {
   test('it returns group', () => {

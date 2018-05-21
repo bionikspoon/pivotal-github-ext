@@ -6,18 +6,11 @@ import './PivotalStories.css'
 
 type Props = {
   storyIds: Array<string>,
-  storage: ({}) => Promise<{}>,
-  fetchResources: ({ options?: {}, resources: {} }) => Promise<{}>,
 }
 
 export default function PivotalStories(props: Props) {
   const renderStories = map(storyId => (
-    <PivotalStory
-      storyId={storyId}
-      key={storyId}
-      storage={props.storage}
-      fetchResources={props.fetchResources}
-    />
+    <PivotalStory storyId={storyId} key={storyId} />
   ))
   return (
     <div className="PivotalStories__container">
